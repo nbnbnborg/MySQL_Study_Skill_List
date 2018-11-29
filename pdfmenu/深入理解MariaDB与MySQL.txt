@@ -1,0 +1,219 @@
+第1章 MariaDB  1
+1.1 MariaDB  2
+1.2 MariaDB与MySQL  3
+1.2.1 MariaDB、MySQL和PerconaServer  3
+1.2.2 相同点  6
+1.2.3 不同点  7
+1.2.4 各版本间的兼容性  10
+1.2.5 性能比较  11
+1.2.6 MariaDB是否会取代MySQL  14
+1.2.7 MariaDB与MySQL的选择  14
+第2章 安装  17
+2.1 下载  18
+2.2 安装  20
+2.2.1 在Windows操作系统下安装MariaDB  21
+2.2.2 在Linux操作系统下安装MariaDB  27
+2.3 更新  28
+2.3.1 从MySQL升级到MariaDB时的注意事项  28
+2.3.2 不受版本限制的安全升级法  29
+2.3.3 从MySQL 5.0或之前版本升级为MariaDB 5.5  30
+2.3.4 从MySQL 5.1升级为MariaDB 5.5  31
+2.3.5 从MySQL 5.5升级为MariaDB 5.5  32
+第3章 MariaDB启动及执行查询 33
+3.1 启动与终止服务器MariaDB MySQL  34
+3.1.1 在Linux中启动与终止MariaDB服务器  34
+3.1.2 在Windows系统中启动与终止MariaDB服务器  36
+3.2 登录服务器MariaDB MySQL  37
+3.2.1 登录服务器与版本确认  37
+3.2.2 mysql客户端程序支持的选项  39
+3.3 创建数据库与用户MariaDB MySQL  41
+3.3.1 MariaDB用户账户识别与权限  41
+3.3.2 MariaDB默认用户  47
+3.3.3 MariaDB的默认数据库  48
+3.3.4 新建数据库  50
+3.3.5 创建用户  50
+3.4 创建与修改数据表MariaDB MySQL  51
+3.4.1 创建数据表  52
+3.4.2 修改数据表（在线与离线）  53
+3.4.3 删除数据表  66
+3.5 数据操作MariaDB MySQL   67
+3.5.1 INSERT  67
+3.5.2 SELECT  68
+3.5.3 UPDATE  70
+3.5.4 REPLACE  71
+3.5.5 DELETE  71
+第4章 执行计划分析  73
+4.1 概要MariaDB MySQL  74
+4.1.1 查询执行过程  74
+4.1.2 优化器种类  75
+4.1.3 统计信息  76
+4.1.4 直方图统计信息MariaDB   82
+4.1.5 连接优化器选项  87
+4.2 准备示例数据  92
+4.2.1 加载示例数据  92
+4.2.2 收集统计信息  94
+4.3 执行计划分析MariaDB MySQL  96
+4.3.1 id列  97
+4.3.2 select_type列  98
+4.3.3 table列  106
+4.3.4 type列  108
+4.3.5 possible_keys列  117
+4.3.6 key列  117
+4.3.7 key_len列  117
+4.3.8 ref列  119
+4.3.9 rows列  120
+4.3.10 Extra列  121
+4.3.11 EXPLAIN EXTENDED（Filtered列）  149
+4.3.12 EXPLAIN EXTENDED（附加优化器信息）  150
+4.3.13 EXPLAIN PARTITIONS（Partitions列）  151
+4.4 优化器提示MariaDB MySQL   152
+4.4.1 提示的使用方法  152
+4.4.2 STRAIGHT_JOIN  153
+4.4.3 USE INDEX/FORCE INDEX/IGNORE INDEX  156
+4.4.4 SQL_CACHE/SQL_NO_CACHE  157
+4.4.5 SQL_CALC_FOUND_ROWS  158
+4.4.6 其他提示  160
+4.5 分析执行计划时的注意事项  160
+4.5.1 Select_type列中需要注意的项目  160
+4.5.2 Type列中需要注意的项目  161
+4.5.3 Key列中需要注意的项目  161
+4.5.4 Rows列中需要注意的项目  161
+4.5.5 Extra列中需要注意的项目  161
+第5章 优化  163
+5.1 全表扫描MariaDB MySQL  164
+5.2 ORDER BY处理（Using filesort）MariaDB MySQL  165
+5.2.1 排序缓冲  165
+5.2.2 排序算法  167
+5.2.3 排序处理方式  169
+5.2.4 ORDER BY  LIMIT n 优化MySQL  177
+5.2.5 与排序相关的状态变量  178
+5.3 GROUP BY 处理MariaDB MySQL  179
+5.3.1 使用索引扫描处理GROUP BY（紧凑索引扫描）  179
+5.3.2 使用松散索引扫描处理GROUP BY  179
+5.3.3 使用临时表处理GROUP BY  181
+5.4 DISTINCT处理MariaDB MySQL  182
+5.4.1 SELECT DISTINCT…  182
+5.4.2 DISTINCT 用于集合函数内部  183
+5.5 临时表（Using temporary）MariaDB MySQL  184
+5.5.1 需要使用临时表的查询  185
+5.5.2 在磁盘上创建临时表（使用Aria 存储引擎）MariaDB  185
+5.5.3 与临时表有关的状态变量  186
+5.5.4 带索引的内部临时表  187
+5.5.5 内部临时表的注意事项  187
+5.6 索引条件下推MariaDB MySQL  188
+5.7 多范围读MariaDB MySQL   191
+5.7.1 基于RowId排序（Rowid-orderd scan）  192
+5.7.2 基于Key排序（Key-ordered scan）MariaDB  194
+5.7.3 基于Key与RowId 排序（Key-ordered、Rowid-ordered scan）MariaDB  195
+5.7.4 “多范围读”优化与排序  197
+5.7.5 “多范围读”优化的注意事项  198
+5.8 索引合并MariaDB MySQL   199
+5.8.1 Using union  201
+5.8.2 Using sort_union  202
+5.8.3 Using intersect  204
+5.8.4 Using sort_intersect MariaDB   205
+5.9 数据表连接MariaDB MySQL  205
+5.9.1 连接类型  206
+5.9.2 连接算法  212
+5.9.3 连接的注意事项  222
+5.10 子查询MariaDB MySQL  224
+5.10.1 半连接子查询优化  224
+5.10.2 非半连接的子查询优化  236
+5.10.3 子查询缓存  238
+第6章 存储引擎  241
+6.1 Aria存储引擎MariaDB  242
+6.1.1 事务  242
+6.1.2 页面缓存  243
+6.1.3 系统变量设置  243
+6.2 XtraDB存储引擎MariaDB   244
+6.3 InnoDB存储引擎MariaDB MySQL  247
+6.3.1 MySQL 5.6 InnoDB  247
+6.3.2 “脏页”刷新  262
+6.3.3 缓冲池性能改善MariaDB   279
+6.3.4 原子写（针对FusionIO SSD的Atomic write）MariaDB   283
+6.3.5 扩展的InnoDB引擎状态输出MariaDB   284
+6.3.6 XtraDB重做日志存档  288
+6.3.7 跟踪修改页面MariaDB   289
+6.4 全文检索引擎MariaDB MySQL  290
+6.4.1 添加全文检索索引  290
+6.4.2 全文检索索引表空间  292
+6.4.3 与全文检索索引相关的INFORMATION_SCHEMA 信息  294
+6.4.4 使用全文检索索引  295
+6.4.5 注意事项  295
+6.5 Memcached插件MySQL   298
+6.5.1 架构  298
+6.5.2 安装与测试  299
+6.5.3 缓存策略  303
+6.5.4 注册用户数据表  304
+6.5.5 相关系统变量  305
+6.6 Cassandra存储引擎MariaDB  306
+6.6.1 Cassandra  307
+6.6.2 Cassandra存储引擎  309
+6.7 CONNECT存储引擎MariaDB   311
+6.7.1 安装CONNECT存储引擎  311
+6.7.2 连接Oracle RDBMS数据表  312
+6.7.3 连接my.cnf设置文件  313
+6.7.4 连接操作系统目录  314
+6.8 Sequence存储引擎MariaDB   315
+6.8.1 Sequence存储引擎的基本用法  315
+6.8.2 查找遗漏的编号  317
+6.8.3 创建顺序组合的号码对  318
+6.8.4 查找倍数或公倍数  318
+6.8.5 顺序生成字母表  319
+6.8.6 顺序生成日期  320
+6.8.7 数据复制加工  320
+6.9 Mroonga全文检索存储引擎MariaDB MySQL  321
+6.9.1 索引算法  322
+6.9.2 安装Mroonga全文检索引擎  324
+6.9.3 使用Mroonga全文检索引擎  325
+第7章 其他功能  329
+7.1 性能提升MariaDB MySQL Enterprise  330
+7.2 管理与诊断MariaDB   335
+7.2.1 SHOW EXPLAIN FOR<THREAD-ID>  335
+7.2.2 向慢查询日志输出执行计划  337
+7.2.3 输出结构化的执行计划  338
+7.2.4 线程的内存使用量  340
+7.2.5 SHUTDOWN命令  341
+7.2.6 强制终止用户或查询执行  341
+7.2.7 GET DIAGNOSTICS  343
+7.3 开发效率MariaDB  344
+7.3.1 LIMIT ROWS EXAMINED  344
+7.3.2 DELETE…RETURNING…  346
+7.3.3 以微秒为单位保存时间  347
+7.3.4 设置DATETIME类型的默认值  349
+7.3.5 扩展正则表达式功能  349
+7.3.6 虚拟列  352
+7.3.7 动态列  354
+7.4 分区MariaDB MySQL   358
+7.4.1 显式指定分区  358
+7.4.2 交换分区表空间  362
+7.5 备份MariaDB MySQL  364
+7.5.1 二进制日志远程备份  365
+7.5.2 XtraBackup介绍  368
+7.5.3 XtraBackup的功能  381
+7.5.4 XtraBackup的高级用法  386
+第8章 复制  397
+8.1 全局事务IDMariaDB MySQL  398
+8.1.1 全局事务ID的定义  398
+8.1.2 全局事务ID的必要性  400
+8.1.3 MariaDB 10.0全局事务ID MariaDB   403
+8.1.4 MySQL 5.6全局事务ID MySQL   413
+8.2 多源复制MariaDB   421
+8.2.1 多源复制相关命令  422
+8.2.2 构建多源复制  423
+8.2.3 多源复制与全局事务  426
+8.3 多线程复制MariaDB MySQL   428
+8.3.1 MySQL 5.6的多线程复制  428
+8.3.2 MariaDB 10.0的多线程复制  431
+8.4 Crash safe slave MariaDB MySQL  433
+8.4.1 MariaDB 10.0的崩溃安全复制  434
+8.4.2 MySQL 5.6的崩溃安全复制  435
+8.5 改善基于ROW的复制功能MariaDB MySQL  435
+8.5.1 ROW格式的容量优化MySQL   435
+8.5.2 ROW格式二进制日志的信息性日志事件  436
+8.6 延迟复制MySQL   439
+8.7 MariaDB与MySQL服务器间的复制  440
+8.8 其他功能改善MariaDB MySQL  441
+8.8.1 二进制日志校验和  441
+8.8.2 二进制日志API  442
+8.8.3 提交二进制日志组  443
