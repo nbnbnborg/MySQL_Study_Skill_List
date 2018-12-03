@@ -11,3 +11,4 @@
 # MySQLDBA修炼之道 主MySQL5.1.45 辅5.5.33 2017.2Published
 # MySQL5.7从入门到精通 MySQL5.7.10 2016.8Published
 # MySQL运维内参：MySQL、Galera、Inception核心原理与最佳实践 MySQL5.7.16 2017.5.11Published
+# MySQL 8 Cookbook MySQL8 2018.11Published
