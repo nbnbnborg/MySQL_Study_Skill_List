@@ -1,5 +1,7 @@
 # MySQL完全手册 MySQL4.0.9 2004.11Published
 # MySQL必知必会 MySQL5.0.4 2009.1Published
+# MySQL性能调优与架构设计 2009.6Published
+# SQL反模式 2011.9Published
 # 高性能MySQL 第3版 MySQL5.1.50+ 2013.5Published
 # MySQL技术内幕-InnoDB存储引擎 第2版 主MySQL5.1 照顾5.6 2013.5Published
 # MYSQL5.5从零开始学 MySQL5.5.13 2012.1Published
