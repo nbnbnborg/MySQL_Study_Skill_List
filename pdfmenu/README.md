@@ -6,6 +6,7 @@
 # MySQL技术内幕-InnoDB存储引擎 第2版 主MySQL5.1 照顾5.6 2013.5Published
 # MYSQL5.5从零开始学 MySQL5.5.13 2012.1Published
 # Effective MySQL之备份与恢复 主MySQL5.5 兼容5.0 照顾5.6 2013.8.1Published
+# MySQL管理之道：性能调优、高可用与监控 主MySQL5.5 辅MySQL5.1 2014.1Published
 # 深入浅出MySQL-数据库开发、优化与管理维护 第2版 主MySQL5.5 辅MySQL5.0.45 2014.1Published
 # MySQL技术内幕 第5版 MySQL5.5.30 2015.7Published
 # 数据库查询优化器的艺术：原理解析与SQL性能优化 PostgreSQL9.2.3、MySQL5.6.10 2014.1Published
