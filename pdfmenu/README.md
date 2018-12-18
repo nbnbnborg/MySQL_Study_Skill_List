@@ -16,3 +16,4 @@
 # MySQL运维内参：MySQL、Galera、Inception核心原理与最佳实践 MySQL5.7.16 2017.5.11Published
 # MySQL王者晋级之路 主MySQL5.6 辅MySQL5.7 2018.3Published
 # MySQL 8 Cookbook MySQL8 2018.11Published
+# 跟老男孩学Linux运维：MySQL入门与提高实践 MySQL5.X 2019.1Published
